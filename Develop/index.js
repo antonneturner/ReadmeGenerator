@@ -23,6 +23,7 @@ inquirer.prompt(questions).then(function(response){
    console.log(response)
     console.log(response.title)
 })
+console.log(response)
 }
 
 console.log(response)
