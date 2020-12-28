@@ -16,7 +16,7 @@
   
   ## Installation
   
-  f
+  c
 
   ## Usage 
   
@@ -24,7 +24,7 @@
   
   ## License
   
-  w
+  d
 
   ## Badges
   
@@ -36,8 +36,8 @@
   
   ## Tests
   
-  w
+  a
   
   ## Questions
 
-  f
+  af
