@@ -47,7 +47,7 @@ const questions = [
 
 // function to write README file
 function createFile(fileName, data) {
-  console.log("display value is ", fileName);
+  //   console.log("display value is ", fileName);
   fs.writeFile(fileName, data, function () {
     console.log("success");
   });
