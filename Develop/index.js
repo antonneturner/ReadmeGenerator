@@ -56,7 +56,7 @@ function createFile(fileName, data) {
 // function to initialize program
 function init() {
   inquirer.prompt(questions).then(function (response) {
-    //  console.log(response);
+    //  console.log(response)
     // console.log(response.title);
     var content = markdown(response);
     //    console.log(content);
