@@ -43,7 +43,9 @@ function generateMarkdown(data) {
   
   ## Questions
 
-  ${data.questions}
+  ${data.gitHubProfileLink}
+
+  ${data.email}
 `;
 }
 

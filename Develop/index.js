@@ -1,6 +1,7 @@
 var inquirer = require("inquirer");
 var markdown = require("./utils/generateMarkdown");
 var fs = require("fs");
+var axios = require("axios");
 // array of questions for user
 const questions = [
   {
@@ -40,8 +41,13 @@ const questions = [
   },
   {
     type: "input",
-    message: "what are your questions ? ",
-    name: "questions",
+    message: "what is your github username ? ",
+    name: "githubUsername",
+  },
+  {
+    type: "input",
+    message: "what is your email ? ",
+    name: "email",
   },
 ];
 
@@ -57,10 +63,16 @@ function createFile(fileName, data) {
 function init() {
   inquirer.prompt(questions).then(function (response) {
     //  console.log(response)
+    axios
+      .get("https://api.github.com/users/" + response.githubUsername)
+      .then(function (gitHubData) {
+        response.gitHubProfileLink = gitHubData.data.html_url;
+        var content = markdown(response);
+
+        //    console.log(content);
+        createFile("./README.md", content);
+      });
     // console.log(response.title);
-    var content = markdown(response);
-    //    console.log(content);
-    createFile("./README.md", content);
   });
 }
 
